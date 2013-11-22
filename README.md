@@ -1,7 +1,7 @@
 Quantitative Methods for Political Science 3
 ===============
 
-# Recitation Materials
+## Recitation Materials
 
 This repository contains some of the materials that I prepared for the recitation of Quant 3, a PhD-level class in the Politics Department at New York University.
 
