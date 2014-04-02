@@ -1,4 +1,4 @@
-# Quantitative Methods for Political Science 3 #
+## Quantitative Methods for Political Science 3 ##
 
 This repository contains a selection of recitation materials prepared by [Pablo Barberá](http://www.pablobarbera.com) for the PhD-level course "Quantitative Methods for Political Science 3", taught by [Prof. Nathaniel Beck](http://politics.as.nyu.edu/object/nathanielbeck) in the Fall of 2013 at New York University.
 
