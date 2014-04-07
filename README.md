@@ -31,7 +31,7 @@ This repository contains a selection of recitation materials prepared by [Pablo 
 - [Bayesian Poisson Regression](bayesian/lab12_bayesian_poisson.R)
 - [Bayesian Probit Regression](bayesian/lab13_bayesian_probit.R)
 - [Bayesian Hierarchical Regression](bayesian/lab13_hierarchical_model.R)
-- [Introduction to Multilevel Regression with Poststratification](bayesian/lab13_mpr_intro.R)
+- [Introduction to Multilevel Regression with Poststratification](bayesian/lab13_mrp_intro.R)
 - [Introduction to Item-Response Theory models](bayesian/lab13_IRT_intro.R)
 - [Introduction to High-Performance Computing](bayesian/lab14_HPC_cheatsheet.pdf)
 - [More advanced examples of IRT models](bayesian/lab14_IRT_issues.R)
