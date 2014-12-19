@@ -289,17 +289,18 @@ parameters {
   real alpha[K];             
   real beta[K];   
   real theta[J]; # realized ideology
-  real gamma[J]; # unobserved, true ideology
+  real gamma; # intercept for legislator ideology distr.
   real beta_party; # effect of party ID
-  real<lower=0.1> sigma; # sd of legislator ideology
+  real<lower=0.1> omega; # sd of legislator ideology
 }
 model {
   alpha ~ normal(0, 5); 
   beta ~ normal(0, 5);
   beta_party ~ normal(0, 2);
+  omega ~ uniform(0, 1);
+  gamma ~ normal(0, 2);
   for (i in 1:J){
-    theta[i] ~ normal(gamma[i], sigma); # hierarchical structure for obs. ideol.
-    gamma[i] ~ normal(beta_party * party[i], sigma); # effect of party ID
+    theta[i] ~ normal(gamma + beta_party * party[i], omega); 
   };
   for (n in 1:N)
     y[n] ~  bernoulli_logit( theta[j[n]] * beta[k[n]] - alpha[k[n]] );
@@ -311,8 +312,7 @@ stan.data <- list(J=J, K=K, N=N, j=j, k=k, y=y, party=repub)
 
 inits <- list(list(alpha=rnorm(K, 0, 2), beta=rnorm(K, 0, 2),
     theta=ifelse(rc$legis.data$party=="R", 1, -1),
-    gamma=ifelse(rc$legis.data$party=="R", 1, -1),
-    beta_party=1, sigma=0.5))
+    beta_party=1, omega=0.5))
 
 stan.fit <- stan(model_code=stan.code, data=stan.data, iter=500, warmup=200,
     chains=1, thin=2, inits=inits)
